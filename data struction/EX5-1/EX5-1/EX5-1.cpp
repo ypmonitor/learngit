@@ -73,7 +73,7 @@ int main(){
 		else
 			cout << "该字符串不是是回文\n";
 		break;
-	default:
+	case 9:
 		DestroyStack(S);
 	}
 	if (i==9) break;
