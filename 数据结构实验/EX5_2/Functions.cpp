@@ -16,7 +16,7 @@ Status StackEmpty(LinkStack S)
 Status Push(LinkStack &S , SElemType e)
 {
 	LinkStack p;
-	p=new StackNode;      //生成新结点p
+	p=new StackNode;     
 	if (!p) exit(OVERFLOW);
 	p->data=e; 
 	p->next=S; S=p; 
