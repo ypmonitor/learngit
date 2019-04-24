@@ -41,7 +41,7 @@ Status DestroyStack(SqStack &S)
 
 Status Push(SqStack &S, SElemType e)
 {
-	if (S.top - S.base == S.stackSize) // Õ»Âú
+	if (S.top - S.base == S.stackSize) // æ ˆæ»¡
 		return ERROR;
 	*S.top++ = e;
 	return OK;
@@ -49,7 +49,7 @@ Status Push(SqStack &S, SElemType e)
 
 Status Pop(SqStack &S, SElemType &e)
 {
-	if (S.top == S.base) // Õ»¿Õ
+	if (S.top == S.base) // æ ˆç©º
 		return ERROR;
 	e  = *--S.top;
 	return OK;
@@ -57,34 +57,34 @@ Status Pop(SqStack &S, SElemType &e)
 
 Status GetTop(SqStack S, SElemType &e)
 {
-	if (S.top == S.base)	 return ERROR; 	// Õ»¿Õ
+	if (S.top == S.base)	 return ERROR; 	// æ ˆç©º
 	e = *(S.top - 1);
 	return OK;
 }
 
 
 void conversion(int N)
-{//¶ÔÓÚÈÎÒâÒ»¸ö·Ç¸ºÊ®½øÖÆÊı£¬´òÓ¡Êä³öÓëÆäµÈÖµµÄ°Ë½øÖÆÊı
+{//å¯¹äºä»»æ„ä¸€ä¸ªéè´Ÿåè¿›åˆ¶æ•°ï¼Œæ‰“å°è¾“å‡ºä¸å…¶ç­‰å€¼çš„å…«è¿›åˆ¶æ•°
 	SqStack S;
 	SElemType e;
-	InitStack(S);	//³õÊ¼»¯¿ÕÕ»S
-	while (N)	//µ±N·ÇÁãÊ±,Ñ­»·
+	InitStack(S);	//åˆå§‹åŒ–ç©ºæ ˆS
+	while (N)	//å½“Néé›¶æ—¶,å¾ªç¯
 	{
-		Push(S, N % 8);	//°ÑNÓë8ÇóÓàµÃµ½µÄ°Ë½øÖÆÊıÑ¹ÈëÕ»S
-		N = N / 8;		//N¸üĞÂÎªNÓë8µÄÉÌ
+		Push(S, N % 8);	//æŠŠNä¸8æ±‚ä½™å¾—åˆ°çš„å…«è¿›åˆ¶æ•°å‹å…¥æ ˆS
+		N = N / 8;		//Næ›´æ–°ä¸ºNä¸8çš„å•†
 	}
-	while (!StackEmpty(S))//µ±Õ»S·Ç¿ÕÊ±£¬Ñ­»·
+	while (!StackEmpty(S))//å½“æ ˆSéç©ºæ—¶ï¼Œå¾ªç¯
 	{
-		Pop(S, e);		//µ¯³öÕ»¶¥ÔªËØe
-		cout << e;		//Êä³öe
+		Pop(S, e);		//å¼¹å‡ºæ ˆé¡¶å…ƒç´ e
+		cout << e;		//è¾“å‡ºe
 	}
 }
 
 int  huwen(char a[])
-{//¶ÔÓÚÈÎÒâÒ»¸ö·Ç¸ºÊ®½øÖÆÊı£¬´òÓ¡Êä³öÓëÆäµÈÖµµÄ°Ë½øÖÆÊı
+{//å¯¹äºä»»æ„ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œåˆ¤æ–­å®ƒæ˜¯å¦ä¸ºå›æ–‡
 	SqStack S;
 	SElemType e;
-	InitStack(S);	//³õÊ¼»¯¿ÕÕ»S
+	InitStack(S);	//åˆå§‹åŒ–ç©ºæ ˆS
 	int n = strlen(a);
 	for (int i = 0; i < n; i++){
 		Push(S, a[i]);
