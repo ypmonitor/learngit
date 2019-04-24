@@ -2,7 +2,7 @@
 #define _EX5_2_
 #define OK 1
 #define ERROR 0
-#define OVERFLOW -1
+#define OVERFLOW -2
 typedef int Status;
 typedef int SElemType;
 
